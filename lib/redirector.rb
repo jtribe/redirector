@@ -1,5 +1,2 @@
-require "redirector/version"
-
-module Redirector
-  # Your code goes here...
-end
+require 'redirector/version'
+require 'redirector/app'
