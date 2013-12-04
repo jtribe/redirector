@@ -1,6 +1,6 @@
 $:.push File.join(File.dirname(__FILE__), '..', 'lib')
 
-# require 'rack/mock'
+require 'rack/test'
 require 'redirector/app'
 
 
