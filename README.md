@@ -6,19 +6,30 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'redirector'
+    gem 'redirector', :git => 'git@github.com:jtribe/redirector.git'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install redirector
 
 ## Usage
 
-TODO: Write usage instructions here
+We expect there to be a yaml file in the site root
+which contains old urls and their new url
+
+    SITE_ROOT/config/redirects/pages.yml
+    
+Sample of what this file should look like
+**note** that the key is the old url
+
+    '/path/to/old/page': '/new-url'
+    '/path/to/old/about': '/about'
+    
+    
+For simplicity, we remove any trailing slashs prior to attempting to match urls. 
+*This is to reduce duplication*
+
 
 ## Contributing
 

@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Redirector::VERSION
   spec.authors       = ["Dougal MacPherson"]
   spec.email         = ["dougal@jtribe.com.au"]
-  spec.description   = "Handles our sites stale urls"
-  spec.summary       = "Simple rack middleware to handle our stale urls"
+  spec.description   = "Handles our new wesites stale urls"
+  spec.summary       = "Simple rack middleware to handle our sites stale urls"
   spec.homepage      = ""
   spec.license       = "MIT"
 
