@@ -34,18 +34,18 @@ module Redirector
       
 
       # Path needs to contain 3 components
-      # parts 1 and 2 need to be numbers
       return false unless path_parts.count == 3
-      return false unless is_number? path_parts[0]
-      return false unless is_number? path_parts[1]
+      
+      # parts 1 and 2 need to be numbers
+      # We need 4 digits
+      return false unless path_parts[0] =~ /[0-9]{4}/
+
+      # We need 2 digits
+      return false unless path_parts[1] =~ /[0-9]{2}/
       
       # We have a blog post
       true
       
-    end
-    
-    def is_number? val
-      !val.to_i.zero?
     end
     
   end
