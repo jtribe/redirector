@@ -35,9 +35,13 @@ describe "App" do
     
     describe "pages" do
       
+      # note trailing slash
       [ '/android-training',
-        '/hire-us',
+        '/android-training/',
+        '/hire-us',  
+        '/hire-us/', 
         '/we-do',
+        '/we-do/',
         '/ios-training-course-outline'].each do |val|
           
         before(:each) do
