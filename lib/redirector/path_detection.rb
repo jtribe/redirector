@@ -23,6 +23,7 @@ module Redirector
       Redirector::Lookup.pages(path)
     end
     
+    # TODO Move blog_url into a config
     def blog_url(path)
       "http://blog.jtribe.com.au#{path}"
     end
