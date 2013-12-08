@@ -18,9 +18,12 @@ describe "Path Detection" do
     end
     
     describe "negative detection" do
-      
+        
       [ '/bacon',
         '/bacon/cheese',
+        '/1/2/three',
+        '/01/02/three',
+        '/001/02/three',
         '/200/tasty/cheeses',
         '/2011/mmm-bacon'].each do |val|
         it "should say #{val} is a not post blog" do
