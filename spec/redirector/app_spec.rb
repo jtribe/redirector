@@ -40,8 +40,10 @@ describe "App" do
         '/android-training/',
         '/hire-us',  
         '/hire-us/', 
+        '/HIRE-US/', 
         '/we-do',
         '/we-do/',
+        '/WE-DO/',
         '/ios-training-course-outline'].each do |val|
           
         before(:each) do
@@ -61,8 +63,15 @@ describe "App" do
   
   describe "negative detection (404)" do
     
+    # Note that we have 
+    # * trailing slashes
+    # * paths in varing case
+    
     [ '/bacon',
       '/bacon/cheese',
+      '/bacon/cheese/',
+      '/BACON/cheese/',
+      '/bacon/CHEESE/',
       '/200/tasty/cheeses',
       '/2011/mmm-bacon'].each do |val|
       it "should say #{val} is a not post blog" do
