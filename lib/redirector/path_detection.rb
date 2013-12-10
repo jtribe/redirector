@@ -20,7 +20,7 @@ module Redirector
     private
     
     def find_in_pages(path)
-      Redirector::Lookup.pages(path)
+      Redirector::Lookup.pages(path.downcase)
     end
     
     # TODO Move blog_url into a config

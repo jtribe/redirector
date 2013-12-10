@@ -38,7 +38,9 @@ describe "Path Detection" do
     describe "positive detection" do
       
       [ '/we-do',
+        '/WE-DO',
         '/ios',
+        '/IOS',
         '/intro'].each do |val|
         it "should say #{val} is a page" do
           Redirector::PathDetection.new(val).new_path.should_not be_nil
