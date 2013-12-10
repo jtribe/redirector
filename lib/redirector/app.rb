@@ -1,6 +1,7 @@
 # This is the rack app that is called when the web server
 # can't find anything inside /public
 require 'redirector/path_detection'
+require 'redirector/not_found'
 
 module Redirector
   class App
@@ -44,9 +45,10 @@ module Redirector
     def not_found
       
       @res.status = 404
-      @res.write('not found')
+      @res.write(Redirector::NotFound.content)
       @res.finish
     end
+    
     
   end
 end

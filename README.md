@@ -31,6 +31,15 @@ For simplicity, we remove any trailing slashs prior to attempting to match urls.
 *This is to reduce duplication*
 
 
+###404 file
+
+The middleware will attempt to read the contents of 404.html at the rack root
+
+    RACK_ROOT/404.html
+
+If this file doesn't exist, it will only return text 'Not found'
+*(This should be rolled into a config)*
+
 ## Contributing
 
 1. Fork it

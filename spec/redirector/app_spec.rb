@@ -78,6 +78,7 @@ describe "App" do
         
         get val
         last_response.status.should == 404
+        last_response.body.should =~ Regexp.new('<h1>not found</h1>', 'i')
       end
     end
   end
