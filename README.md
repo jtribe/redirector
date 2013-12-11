@@ -40,6 +40,20 @@ The middleware will attempt to read the contents of 404.html at the rack root
 If this file doesn't exist, it will only return text 'Not found'
 *(This should be rolled into a config)*
 
+
+##Testing
+
+[![Build Status](https://travis-ci.org/jtribe/redirector.png?branch=master)](https://travis-ci.org/jtribe/redirector)
+
+Testing on the following rubies... 
+                                   
+* 2.0.0                            
+* 1.9.3                            
+* 1.9.2                            
+
+Note there is no 1.8.*
+
+
 ## Contributing
 
 1. Fork it
