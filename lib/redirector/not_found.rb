@@ -1,27 +1,33 @@
 module Redirector
   class NotFound
     
-    def self.content
-      self.new.content
+    def self.content(filepath=nil)
+      self.new(filepath).content
     end
     
-    def content
+    attr_accessor :path
+      
+    def initialize(filepath=nil)
+      @path = asset_path(filepath)
+    end         
+                
+    def content 
       # Read the contents of 404.html
       file_exists? ? file_contents : 'Not found'
     end              
                      
-    private          
+    private       
                      
     def file_contents
-      IO.read(file_path)
-    end
-    
-    def file_path
-      File.join ENV['PWD'], '404.html'
+      IO.read(path)
+    end         
+                
+    def asset_path(filepath=nil)
+      File.join ENV['PWD'], (filepath || '404.html')
     end
     
     def file_exists?
-      File.exists? file_path
+      File.exists? path
     end
     
   end

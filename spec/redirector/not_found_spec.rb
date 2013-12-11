@@ -6,8 +6,16 @@ describe "Not found" do
     @not_found = Redirector::NotFound.new
   end
   
-  it "should have a path to 404.html" do
-    @not_found.send(:file_path).should =~ Regexp.new('sample/404.html')
+  
+  describe "asset path" do
+    
+    it "should have a default containing 404.html" do
+      @not_found.send(:asset_path).should =~ Regexp.new('sample/404.html')
+    end
+
+    it "should use the filepath passed in" do
+      @not_found.send(:asset_path, 'errors/missing.html').should =~ Regexp.new('sample/errors/missing.html')
+    end
   end
   
   it "should read contents of 404.html" do
