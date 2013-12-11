@@ -1,12 +1,13 @@
 # This is the rack app that is called when the web server
 # can't find anything inside /public
+require 'redirector/config'
 require 'redirector/path_detection'
 require 'redirector/not_found'
 
 module Redirector
   class App
     
-    attr_accessor :req, :res
+    attr_accessor :req, :res, :config
     
     # =============================================
     # = Call is the entry point for all rack apps =
@@ -21,6 +22,9 @@ module Redirector
       # note that we default to returning json
       @req = Rack::Request.new env
       @res = Rack::Response.new
+
+      # Our configuration
+      @config = Redirector::Config.new
     end
     
     def call
@@ -45,7 +49,7 @@ module Redirector
     def not_found
       
       @res.status = 404
-      @res.write(Redirector::NotFound.content)
+      @res.write(Redirector::NotFound.content(@config.page_missing))
       @res.finish
     end
     

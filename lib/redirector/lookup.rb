@@ -26,7 +26,7 @@ module Redirector
     end
     
     def base_path
-      File.join(pwd, 'config/redirects')
+      File.join(pwd, 'config/redirector')
     end
     
     def pwd
